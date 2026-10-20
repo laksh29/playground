@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:playground/playgroud_home_screen.dart';
+import 'package:playground/home/playgroud_home_screen.dart';
 
 class PlaygroundMainScreen extends StatelessWidget {
   const new({super.key});
