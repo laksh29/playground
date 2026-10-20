@@ -1,5 +1,5 @@
 // Import will depend on App ID.
-package com.mydomain.homescreen_widgets
+package com.example.playground
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
