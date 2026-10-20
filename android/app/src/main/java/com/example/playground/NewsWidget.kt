@@ -29,6 +29,14 @@ class NewsWidget : AppWidgetProvider() {
             // Get reference to SharedPreferences
             val widgetData = HomeWidgetPlugin.getData(context)
             val views = RemoteViews(context.packageName, R.layout.news_widget).apply {
+                val articleId = widgetData.getString("headline_ID", null)
+                val pendingIntent = HomeWidgetLaunchIntent.getActivity(
+                    context,
+                    MainActivity::class.java,
+                    Uri.parse("homescreenwidgets://article?id=${articleId}")
+                )
+                setOnClickPendingIntent(R.id.widget_container, pendingIntent)
+
                 val title = widgetData.getString("headline_title", null)
                 setTextViewText(R.id.headline_title, title ?: "No title set")
 
