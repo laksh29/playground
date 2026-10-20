@@ -13,11 +13,18 @@ class PlaygroudHomeScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
       ),
       body: ListView.builder(
+        padding: EdgeInsets.all(0),
         itemCount: HomeData.items.length,
         itemBuilder: (context, idx) {
           final HomeData item = HomeData.items[idx];
 
-          return _HomePageTile(item: item);
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 8.0,
+            ),
+            child: _HomePageTile(item: item),
+          );
         },
       ),
     );
@@ -56,14 +63,14 @@ class _HomePageTile extends StatelessWidget {
           children: [
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     item.title,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   if (item.subTitle != null && item.subTitle!.isNotEmpty) ...[
-                    SizedBox(height: 12.0),
+                    SizedBox(height: 4.0),
                     Text(
                       item.subTitle!,
                       style: Theme.of(context).textTheme.bodySmall,
