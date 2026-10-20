@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/dynamic_launcher_icon/dynamic_launcher_selector.dart';
 import 'package:playground/news_articles/news_listing_screen.dart';
 
 class HomeData {
@@ -17,6 +18,11 @@ class HomeData {
       title: "News Articles",
       subTitle: "Device home widget experiment",
       screen: NewsListingScreen(),
+    ),
+    HomeData(
+      title: "Launcher icons",
+      subTitle: "Change launcher icon dynamically",
+      screen: DynamicLauncherSelector(),
     ),
   ];
 }
